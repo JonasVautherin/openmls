@@ -52,6 +52,11 @@ impl TempBuilderPG1 {
         self
     }
 
+    pub(crate) fn with_leaf_extensions(mut self, leaf_extensions: Extensions) -> Self {
+        self.leaf_extensions = Some(leaf_extensions);
+        self
+    }
+
     pub(crate) fn get_secrets(
         self,
         provider: &impl OpenMlsProvider,

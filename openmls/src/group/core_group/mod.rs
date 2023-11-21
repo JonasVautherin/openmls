@@ -211,6 +211,14 @@ impl CoreGroupBuilder {
         self
     }
 
+    /// Set the [`Extensions`] for the own leaf in the group.
+    pub(crate) fn with_leaf_extensions(mut self, leaf_extensions: Extensions) -> Self {
+        self.public_group_builder = self
+            .public_group_builder
+            .with_leaf_extensions(leaf_extensions);
+        self
+    }
+
     /// Build the [`CoreGroup`].
     /// Any values that haven't been set in the builder are set to their default
     /// values (which might be random).
